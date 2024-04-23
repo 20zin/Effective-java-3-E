@@ -9,6 +9,14 @@ public class Order {
     private boolean prime;
     private boolean urgent;
     private Product product;
+
+    private int status = 200;
+
+    private final int PREPARING = 0;
+    private final int SHIPPED = 2;
+
+    private OrderStatus orderStatus = OrderStatus.DELIVERED;
+
     public static Order primeOrder(Product product){
         Order order = new Order();
         order.prime = true;
