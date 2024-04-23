@@ -21,6 +21,7 @@ public class Order {
         Order order = new Order();
         order.prime = true;
         order.product = product;
+
         return order;
     }
 
@@ -29,6 +30,13 @@ public class Order {
         order.urgent = true;
         order.product = product;
         return order;
+    }
+
+    public static void main(String[] args) {
+        Order order = new Order();
+        if(order.orderStatus == OrderStatus.DELIVERED){ //equals는 NPE
+            System.out.println("delivered");
+        }
     }
 
     //원하는 객체의 특징을 잘표현하는 메소드를 생성할수있다 <- 생성자의 signature가 중복되는 경우
